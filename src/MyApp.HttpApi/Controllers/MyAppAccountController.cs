@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace MyApp.Controllers
 {
     [Dependency(ReplaceServices = true)]
-    [ExposeServices(typeof(AccountController))]
+    [ExposeServices(typeof(AccountController), IncludeSelf = true)]
     public class MyAppAccountController : AccountController
     {
         public MyAppAccountController(SignInManager<Volo.Abp.Identity.IdentityUser> signInManager, IdentityUserManager userManager, ISettingProvider settingProvider, IdentitySecurityLogManager identitySecurityLogManager, IOptions<IdentityOptions> identityOptions) 
