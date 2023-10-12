@@ -24,7 +24,7 @@ namespace MyApp.Models
         public override async Task<IActionResult> OnPostAsync(string action)
         {
             var result = await base.OnPostAsync(action);
-            if (Alerts.Any(a => a.Title == "UserLockedOutMessage"))
+            if (Alerts.Any(a => a.Text == L["UserLockedOutMessage"]))
             {
                 Alerts.Clear();
                 Alerts.Danger(L["InvalidUserNameOrPassword"]);

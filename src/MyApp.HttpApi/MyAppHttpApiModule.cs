@@ -29,13 +29,7 @@ public class MyAppHttpApiModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        ConfigureLocalization();
-        ReplaceLoginModel(context);
-    }
-
-    private void ReplaceLoginModel(ServiceConfigurationContext context)
-    {
-        context.Services.Replace(ServiceDescriptor.Transient<LoginModel,MyAppLoginModel>());
+        ConfigureLocalization();        
     }
 
     private void ConfigureLocalization()
